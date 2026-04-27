@@ -1,4 +1,5 @@
 // Reorder 24-slice FLAIR stack from interleaved to anatomical order
+//assumes user already has open dataset(s) that they wish to process
 // User selects which open dataset to process
 
 titles = getList("image.titles");
@@ -19,17 +20,17 @@ if (nSlices != 24) {
 }
 print("? Selected dataset: \"" + origTitle + "\"");
 
-// Make 1–8
+// Make 1â€“8
 selectWindow(origTitle);
 run("Make Substack...", "slices=1-8");
 rename("Batch1");
 
-// Make 9–16
+// Make 9â€“16
 selectWindow(origTitle);
 run("Make Substack...", "slices=9-16");
 rename("Batch2");
 
-// Make 17–24
+// Make 17â€“24
 selectWindow(origTitle);
 run("Make Substack...", "slices=17-24");
 rename("Batch3");
@@ -41,7 +42,7 @@ newImage("Reordered", "32-bit black", w, h, 24);
 print("? Created 24-slice reordered stack.");
 
 // Interleave with logging
-print("Begin interleaving 3 × 8 slices; DICOM filenames:");
+print("Begin interleaving 3 Ã— 8 slices; DICOM filenames:");
 for (slice = 1; slice <= 8; slice++) {
     for (batch = 1; batch <= 3; batch++) {
         batchName = "Batch" + batch;
