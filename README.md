@@ -11,7 +11,7 @@ Batch 3: slices 17–24
 
 so the true anatomical order seen in DICOM filenames (e.g., 37932_00001, 37932_00009, 37932_00017, …) is scrambled in ImageJ. This macro:
 
-Processes any 24‑slice stack (not just FLAIR, but also T2‑weighted, DTI, etc.).
+Processes any 24‑slice stack (not just FLAIR, but also T2‑weighted, T1w, etc.).
 
 Splits the stack into three substacks: Batch1, Batch2, Batch3.
 
